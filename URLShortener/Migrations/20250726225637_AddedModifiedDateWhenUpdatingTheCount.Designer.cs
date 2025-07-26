@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using URLShortener.Data;
@@ -11,9 +12,11 @@ using URLShortener.Data;
 namespace URLShortener.Migrations
 {
     [DbContext(typeof(URLShortenerDbContext))]
-    partial class URLShortenerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250726225637_AddedModifiedDateWhenUpdatingTheCount")]
+    partial class AddedModifiedDateWhenUpdatingTheCount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
